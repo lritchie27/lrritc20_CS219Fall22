@@ -28,9 +28,13 @@ public class Time {
         System.out.print("The number of seconds remaining in the day is ");
         System.out.println(seconds_in_a_day - time_in_seconds + ".");
 
-        // Display the percentage of the day that has passed
-        System.out.print("The percentage of the day that has passed is ");
-        System.out.println(time_in_seconds / seconds_in_a_day * 100 + "%.");
+        /*
+         Display the percentage of the day that has passed.
+         Use printf and %.3f to round the percentage to 3 decimal places.
+         */
+        double percentage = time_in_seconds / seconds_in_a_day * 100;
+        System.out.printf("The percentage of the day that has passed is %.3f", percentage);
+        System.out.println("%.");
 
         // Change the time to current time
         hour = 21;
@@ -45,7 +49,7 @@ public class Time {
          This gives the elapsed time since working on this exercise
          in seconds.
          */
-        System.out.print("The amount of time in seconds that has elapsed since working on this exercise is ");
+        System.out.print("The amount of time, in seconds, that has elapsed since working on this exercise is ");
         System.out.println(new_time - time_in_seconds + ".");
 
 }
