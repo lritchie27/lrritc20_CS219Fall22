@@ -19,21 +19,21 @@ public class Time {
 
         // Print new line with the amount of time in seconds since midnight
         System.out.print("The amount of seconds that have passed since midnight is ");
-        System.out.println(time_in_seconds + ".");
+        System.out.println((int) time_in_seconds + ".");
 
         // Create variable for number of seconds in a day
-        double seconds_in_a_day = 60 * 60 * 24;
+        final double SECONDS_IN_A_DAY = 60 * 60 * 24;
 
         // Display the number of seconds remaining in the day
         System.out.print("The number of seconds remaining in the day is ");
-        System.out.println(seconds_in_a_day - time_in_seconds + ".");
+        System.out.println((int) (SECONDS_IN_A_DAY - time_in_seconds) + ".");
 
         /*
          Display the percentage of the day that has passed.
-         Use printf and %.3f to round the percentage to 3 decimal places.
+         Use printf and %.2f to round the percentage to 2 decimal places.
          */
-        double percentage = time_in_seconds / seconds_in_a_day * 100;
-        System.out.printf("The percentage of the day that has passed is %.3f", percentage);
+        double percentage = time_in_seconds / SECONDS_IN_A_DAY * 100;
+        System.out.printf("The percentage of the day that has passed is %.2f", percentage);
         System.out.println("%.");
 
         // Change the time to current time
@@ -47,10 +47,14 @@ public class Time {
         /*
          Take new_time and subtract time_in_seconds from it.
          This gives the elapsed time since working on this exercise
-         in seconds.
+         in seconds. Convert seconds into minutes using division and
+         modulo.
          */
+        int minutes = (int) (new_time - time_in_seconds) / 60;
+        double seconds = (new_time - time_in_seconds) % 60;
         System.out.print("The amount of time, in seconds, that has elapsed since working on this exercise is ");
-        System.out.println(new_time - time_in_seconds + ".");
+        System.out.println((int) (new_time - time_in_seconds) + ".");
+        System.out.println("This is equivalent to " + minutes + " minutes and " + (int) seconds + " seconds.");
 
 }
 
