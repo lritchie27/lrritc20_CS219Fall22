@@ -43,6 +43,7 @@ public class Time {
         /*
          Take new_time and subtract time_in_seconds from it.
          This gives the elapsed time since working on this exercise
+         in seconds.
          */
         System.out.print("The amount of time in seconds that has elapsed since working on this exercise is ");
         System.out.println(new_time - time_in_seconds + ".");
