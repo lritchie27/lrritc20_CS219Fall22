@@ -1,5 +1,10 @@
-package HW2;
+/*
+Logan Ritchie
+9/6/2022
+Assignment 2
+ */
 
+package HW2;
 
 import java.util.Scanner;
 
@@ -10,6 +15,8 @@ public class DayOfWeek {
     the integer that represents the day of the week that the date fell on.
     0 = Sunday
     6 = Saturday
+    The equations in this function come from the assignment description
+    in campus.
      */
     public static int dayofweek(int m, int d, int y) {
         int y_o = y - (14 - m) / 12;
