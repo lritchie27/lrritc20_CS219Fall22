@@ -6,6 +6,7 @@ Assignment 2
 
 package HW2;
 
+// sets up the ability to take user input
 import java.util.Scanner;
 
 public class DayOfWeek {
