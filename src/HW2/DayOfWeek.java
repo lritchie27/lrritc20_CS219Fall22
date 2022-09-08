@@ -43,9 +43,20 @@ public class DayOfWeek {
         System.out.print("Enter a 4-digit year (Ex: 2022): ");
         int year = kbd.nextInt();
 
-        // Call dayofweek function to print the day
-        System.out.println(dayofweek(month, day, year));
+        // this is just some formatting so the user knows which
+        // day of the week it is
+        System.out.println();
+        System.out.println("0 = Sunday");
+        System.out.println("1 = Monday");
+        System.out.println("2 = Tuesday");
+        System.out.println("3 = Wednesday");
+        System.out.println("4 = Thursday");
+        System.out.println("5 = Friday");
+        System.out.println("6 = Saturday");
+        System.out.println();
 
+        // Call dayofweek function to print the day
+        System.out.println("The day of the week is " + dayofweek(month, day, year));
 
     }
 
