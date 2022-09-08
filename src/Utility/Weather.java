@@ -19,11 +19,29 @@ public class Weather {
 
         // Get temperature from user
         System.out.print("Enter temperature in degrees F: ");
-        double temperature = kbd.nextDouble();
+        double temperature;
+
+        if (kbd.hasNextDouble()) {
+            temperature = kbd.nextDouble();
+        }
+        else {
+            System.out.printf("Error: Please enter a decimal number. You entered \"%s\"",
+                               kbd.next());
+            return; // exit main
+        }
 
         // Get wind velocity from user
-        System.out.print("Enter windvelocity in MPH: ");
-        double velocity = kbd.nextDouble();
+        System.out.print("Enter wind velocity in MPH: ");
+        double velocity;
+
+        if (kbd.hasNextDouble()) {
+            velocity = kbd.nextDouble();
+        }
+        else {
+            System.out.printf("Error: Please enter a decimal number. You entered \"%s\"",
+                    kbd.next());
+            return; // exit main
+        }
 
         // Call the windchill function
         System.out.printf("The windchill for %.1f degrees F with a wind velocity of %.1f MPH is %.2f degrees F.\n",

@@ -29,7 +29,7 @@ public class InvestmentCalculator {
         int n = s.nextInt();
 
         // print out the amount
-        System.out.printf("Your investment would be worth $%.2f", Investment.investment(c, r, t, n));
+        System.out.printf("Your investment would be worth $%.2f 💰", Investment.investment(c, r, t, n));
 
     }
 
