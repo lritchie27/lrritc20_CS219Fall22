@@ -67,14 +67,14 @@ public class Investment {
 
             // check to see if time is greater than 0
             if (t < 0) {
-                System.out.print("Error: Please enter a number greater than 0. " +
+                System.out.print("Error: Please enter an integer number greater than 0. " +
                         "You entered " + t);
                 return; // exit main
             }
         }
         // a string was entered
         else {
-            System.out.printf("Error: Please enter a number. You entered \"%s\"", kbd.next());
+            System.out.printf("Error: Please enter an integer number. You entered \"%s\"", kbd.next());
             return; // exit main
         }
 
@@ -88,14 +88,14 @@ public class Investment {
 
             // check to see if n is greater than 0
             if (n < 0) {
-                System.out.print("Error: Please enter a number greater than 0. " +
+                System.out.print("Error: Please enter an integer number greater than 0. " +
                         "You entered " + n);
                 return; // exit main
             }
         }
         // a string was entered
         else {
-            System.out.printf("Error: Please enter a number. You entered \"%s\"", kbd.next());
+            System.out.printf("Error: Please enter an integer number. You entered \"%s\"", kbd.next());
             return; // exit main
         }
 
