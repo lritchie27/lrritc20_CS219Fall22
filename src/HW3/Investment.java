@@ -1,3 +1,9 @@
+/*
+Assignment 3
+9/13/2022
+Logan Ritchie
+ */
+
 package HW3;
 
 import java.util.Scanner;
