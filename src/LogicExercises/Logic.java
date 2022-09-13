@@ -47,6 +47,8 @@ public class Logic {
 
     public static boolean isOrdered(int d1, int d2, int d3) {
 
+        // returns true if one or both are true
+        // returns false if neither are true
         return (d1 < d2 && d2 < d3) || (d3 < d2 && d2 < d1);
 
     }
