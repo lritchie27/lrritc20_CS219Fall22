@@ -29,14 +29,14 @@ public class Investment {
 
             // check to see if initial deposit is greater than 0
             if (c < 0) {
-                System.out.print("Error: Please enter an integer greater than 0. " +
+                System.out.print("Error: Please enter a number greater than 0. " +
                         "You entered " + c);
                 return; // exit main
             }
         }
         // a string was entered
         else {
-            System.out.printf("Error: Please enter an integer greater than 0." +
+            System.out.printf("Error: Please enter a number greater than 0." +
                     " You entered \"%s\"", kbd.next());
             return; // exit main
         }
