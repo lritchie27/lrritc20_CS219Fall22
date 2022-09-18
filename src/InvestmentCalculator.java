@@ -1,4 +1,4 @@
-import HW3.Investment;
+import HW4.Investment;
 
 import java.util.Scanner;
 
