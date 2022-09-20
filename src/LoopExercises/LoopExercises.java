@@ -1,6 +1,6 @@
 package LoopExercises;
 
-public class September15LoopExercises {
+public class LoopExercises {
 
     /*
      * Return the sum of the digits mod 10 of an integer. This is one example of
@@ -18,7 +18,15 @@ public class September15LoopExercises {
             sum = sum + (n % 10);
             n = n / 10;
         }
-        return sum % 10;  // just to shut up error message
+        return sum % 10;
+    }
+
+    /*
+     * Append the checksum digit as the least significant digit
+     * to n and return it.
+     */
+    public static int appendChecksum(int n) {
+        return n * 10 + checksum(n);
     }
 
     /*
@@ -32,7 +40,16 @@ public class September15LoopExercises {
      * Question: Does the function work if n is negative?
      */
     public static int count7s(int n) {
-        return -1;  // just to shut up error message
+        int i;
+        int count = 0;
+        while (n > 0) {
+            i = n % 10;
+            n = n / 10;
+            if (i == 7) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /*
@@ -47,7 +64,13 @@ public class September15LoopExercises {
      *  sum3or5(1000) = 233168
      */
     public static int sum3or5(int n) {
-        return -1;  // shut up error message
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                sum += i;
+            }
+        }
+        return sum;
     }
 
     /*
@@ -55,6 +78,7 @@ public class September15LoopExercises {
      * and less than n. If no factors return -1.
      * Notice that this function uses longs and not ints.
      *
+     *  factor(25) == 5
      *  factor(59953793) == 7727
      *  factor(1531482031) == -1
      *  factor(7304692485435694493L) == -1;
@@ -64,6 +88,7 @@ public class September15LoopExercises {
      *           remove it?
      */
     public static long factor(long n) {
+        // go from % 2 up to % n - 1
         return -1; // shut up error message
     }
 
@@ -190,6 +215,19 @@ public class September15LoopExercises {
 
         // test checksum method
         System.out.println(checksum(4298) == 3);
+
+        // test appendChecksum method
+        System.out.println(appendChecksum(91217) == 912170);
+        System.out.println(appendChecksum(91217) != 912179); // negative test
+
+        // test count7s method
+        System.out.println(count7s(1727337) == 3);
+        System.out.println(count7s(1234) == 0);
+        System.out.println(count7s(777777) == 6);
+
+        // test sum3or5 method
+        System.out.println(sum3or5(10) == 23);
+        System.out.println(sum3or5(1000) == 233168);
 
     }
 }
