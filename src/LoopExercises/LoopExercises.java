@@ -89,7 +89,14 @@ public class LoopExercises {
      */
     public static long factor(long n) {
         // go from % 2 up to % n - 1
-        return -1; // shut up error message
+        int i = 2;
+        while (i < n) {
+            if (n % i == 0) {
+                break;
+            }
+            i++;
+        }
+        return i; // shut up error message
     }
 
     /*
@@ -101,7 +108,10 @@ public class LoopExercises {
      * Question: Why is this a void function?
      */
     public static void stars(int n) {
-        // fill in code
+        for (int i = 1; i <= n; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
     }
 
     /*
@@ -120,7 +130,12 @@ public class LoopExercises {
      *  Hint: use the function stars you defined above.
      */
     public static void triangle(int n) {
-        // fill in code
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     /*
@@ -228,6 +243,20 @@ public class LoopExercises {
         // test sum3or5 method
         System.out.println(sum3or5(10) == 23);
         System.out.println(sum3or5(1000) == 233168);
+
+        // test factor method
+        System.out.println(factor(25) == 5);
+        System.out.println(factor(59953793) == 7727);
+
+        // test stars method
+        stars(5);
+
+        // test triangle method
+        triangle(5);
+
+
+
+
 
     }
 }
