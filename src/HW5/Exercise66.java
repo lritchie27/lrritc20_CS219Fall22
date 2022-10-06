@@ -38,6 +38,8 @@ public class Exercise66 {
         System.out.println(canSpell("logan", "abjldcogttamn"));
         System.out.println(!canSpell("tea", "hbdtefgjl"));
         System.out.println(canSpell("teaspoon", "abceponjtows"));
+        System.out.println(!canSpell("computer", "vompwwqut"));
+        System.out.println(canSpell("science", "adsimehnwvcnce"));
     }
 
 }
