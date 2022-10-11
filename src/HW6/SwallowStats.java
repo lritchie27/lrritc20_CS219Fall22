@@ -1,3 +1,9 @@
+/*
+ * Logan Ritchie
+ * HW 6
+ * 10/11/2022
+ */
+
 package HW6;
 
 import java.io.IOException;
@@ -45,7 +51,10 @@ public class SwallowStats {
             }
             else {
                 String line = s.nextLine(); // read a line of the website
-                if (!line.contains("#") && line.length() > 0) { // modify condition
+
+                // Originally used indexOf() but IDE said to switch to
+                // !line.contains() since it was more concise
+                if (!line.contains("#") && line.length() > 0) {
                     sum = sum + Double.parseDouble(line);
                     cnt++;
 
@@ -64,8 +73,8 @@ public class SwallowStats {
         }
         double avg = sum / cnt;
         System.out.printf("The average swallow speed recorded was %.2f m/s.\n", avg);
-        System.out.printf("The minimum swallow speed recorded was %.2f m/s.\n", min);
-        System.out.printf("The maximum swallow speed recorded was %.2f m/s.\n", max);
+        System.out.printf("The minimum swallow speed recorded was %.1f m/s.\n", min);
+        System.out.printf("The maximum swallow speed recorded was %.1f m/s.\n", max);
 
     }
 
