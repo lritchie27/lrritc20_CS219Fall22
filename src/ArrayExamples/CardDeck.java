@@ -13,7 +13,7 @@ public class CardDeck {
 
         for (String suit : suits) {   // for each suit in the suits array
             for (String rank: ranks) {
-                deck[cnt++] = suit + rank;
+                deck[cnt++] = rank + suit;
             }
         }
         return deck;
