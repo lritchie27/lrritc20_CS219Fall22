@@ -7,7 +7,6 @@
 package HW7;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class HW7 {
 
@@ -17,7 +16,7 @@ public class HW7 {
     */
     public static boolean hasAdjacent(String [] aos) {
         for (int i = 0; i < aos.length - 1; i++) {
-            if (Objects.equals(aos[i], aos[i + 1])) {
+            if (aos[i].equals(aos[i + 1])) {
                 return true;
             }
         }
@@ -33,7 +32,7 @@ public class HW7 {
     public static boolean hasDuplicate(String [] aos) {
         for (int i = 0; i < aos.length; i++)
             for (int j = i + 1; j < aos.length; j++)
-                if (Objects.equals(aos[i], aos[j])) {
+                if (aos[i].equals(aos[j])) {
                     return true;
                 }
         return false;
