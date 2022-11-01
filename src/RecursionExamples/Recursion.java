@@ -1,5 +1,7 @@
 package RecursionExamples;
 
+import java.util.Arrays;
+
 public class Recursion {
 
     // sum of the digits
@@ -80,14 +82,20 @@ public class Recursion {
 
     // toBinary(23).equals("010111")
     public static String toBinary(int n) {
-        return null;
+
+
+        return "";
     }
 
     // sum(new int []{1,2,3,4}) == 10
     // Do for exam study
     // i is the current position in the array
     public static int sum(int[] a, int i) {
-        return -1;  // shut up error message
+        int sum = 0;
+        for (int j = i; j < a.length; j++) {
+            sum += a[j];
+        }
+        return sum;
     }
 
 
@@ -103,8 +111,11 @@ public class Recursion {
     // Do for exam study
     // i and j are the left and right bounds of the array
     // use function swap above.
-    public static void reverse(int [] a, int i, int j) {
-
+    public static void reverse1(int [] a, int i, int j) {
+        if (i != j) {
+            swap(a, i, j);
+        }
+        System.out.println(Arrays.toString(a));
     }
 
     // main
@@ -118,6 +129,9 @@ public class Recursion {
                 "go hang a salami im a lasagna hog").
                 equals("gohangasalamiimalasagnahog"));
         System.out.println(isPalindrome2("racecar"));
+        int [] nums = {1,2,3,4};
+        reverse1(nums, 0, 3);
+        System.out.println(sum(new int[] {1,2,3,4}, 0));
     }
 
 }
