@@ -1,3 +1,9 @@
+/*
+    Logan Ritchie
+    Exam 2 Practical
+    11/01/2022
+ */
+
 package Exam2;
 
 import java.io.IOException;
