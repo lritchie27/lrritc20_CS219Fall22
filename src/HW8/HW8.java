@@ -1,12 +1,11 @@
 /*
     Logan Ritchie
     HW Assignment 8
-    11/04/2022
+    11/05/2022
  */
 
 package HW8;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class HW8 {
