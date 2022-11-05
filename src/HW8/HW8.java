@@ -1,3 +1,9 @@
+/*
+    Logan Ritchie
+    HW Assignment 8
+    11/04/2022
+ */
+
 package HW8;
 
 import java.sql.SQLOutput;
@@ -12,7 +18,12 @@ public class HW8 {
      *   Write this recursively. Do not use a loop.
      */
     public static int sum(int [] aoi, int i) {
-        return -1;  // shut up error message
+        if (i >= aoi.length) {
+            return 0;
+        }
+        else {
+            return aoi[i] + sum(aoi, i + 1);
+        }
     }
 
 
@@ -30,7 +41,13 @@ public class HW8 {
      *   Write this recursively. Do not use a loop.
      */
     public static int [] reverse(int [] aoi, int i, int j) {
-        return null; // shut up error message
+        if (i > j) {
+            return aoi;
+        }
+        else {
+            swap(aoi, i, j);
+            return reverse(aoi, i + 1, j - 1);
+        }
     }
 
     /*
@@ -40,7 +57,15 @@ public class HW8 {
      *   Write this recursively. Do not use a fruit loop.
      */
     public static int count(int [] aoi, int target, int i) {
-        return -1;
+        if (i >= aoi.length) {
+            return 0;
+        }
+        else if (aoi[i] == target) {
+            return count(aoi, target, i + 1) + 1;
+        }
+        else {
+            return count(aoi, target, i + 1);
+        }
     }
 
     public static void main(String [] args) {
