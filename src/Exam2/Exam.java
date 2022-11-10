@@ -61,7 +61,6 @@ public class Exam {
         Reverse the order of an array
      */
     public static String [] reverse1(String [] arr) {
-
         for (int i = 0; i < arr.length / 2; i++) {
             String temp = arr[i];
             arr[i] = arr[arr.length - 1 - i];
@@ -97,7 +96,6 @@ public class Exam {
 
         System.out.println("The reverse alphabetical version of the palindromes:");
         System.out.println(Arrays.toString(reverse1(aow)));
-
 
     }
 
