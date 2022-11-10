@@ -87,13 +87,7 @@ public class HW8 {
 
         System.out.println(count(nums, 2, 0) == 3);
         System.out.println(count(nums, 2, 13) == 0);
-
-        // need to return nums to its original form
-        nums = reverse(reverse(nums, 2, 5), 0, nums.length -1);
-
-        // this is to make sure nums is back to its original form
-        // System.out.println(Arrays.toString(nums));
-        System.out.println(count(nums, 2, 4) == 3);
+        System.out.println(count(nums, 2, 4) == 2);
 
     }
 
