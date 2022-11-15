@@ -36,10 +36,7 @@ public class HW9 {
             return BigInteger.ONE;
         }
         else if (y % 2 == 0) {
-            for (int i = 0; i < y; i++) {
-                prod = prod.multiply(x);
-            }
-            return prod;
+            return fastbigpow(x, y / 2).multiply(fastbigpow(x, y / 2));
         }
         else {
             return x.multiply(fastbigpow(x, y - 1));
