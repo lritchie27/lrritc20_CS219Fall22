@@ -1,7 +1,7 @@
 /*
     Logan Ritchie
     HW9 Assignment
-    11/14/2022
+    11/15/2022
  */
 
 package HW9;
@@ -62,7 +62,7 @@ public class HW9 {
         System.out.println(fastbigpow(xtoy, 100).equals(xtoy.pow(100)));
 
         // my own test to see if my fastbigpow function works for odd numbered exponents
-        System.out.println(fastbigpow(x, 3).equals(x.pow(3)));
+        System.out.println(fastbigpow(x, 9).equals(x.pow(9)));
     }
 
 }
