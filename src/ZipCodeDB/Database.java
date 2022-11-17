@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /*
@@ -18,7 +20,7 @@ public class Database {
         // allocate the array list
         this.codes = new ArrayList<>();
         this.load_zips();
-    }
+    } // Database
 
     // fill the zipcode array list with real data
     private void load_zips() {
@@ -39,11 +41,62 @@ public class Database {
         while (s.hasNextLine()) {
             String line = s.nextLine();
             String [] parts = line.split(",");
-            Zipcode z = new Zipcode(parts[1].substring(1, parts.length - 1), parts[2].substring(1, parts.length - 1),
-                    parts[3].substring(1, parts.length - 1), Double.parseDouble(parts[4]),
+            Zipcode z = new Zipcode(parts[1].substring(1, parts[1].length() - 1), parts[2].substring(1, parts[2].length() - 1),
+                    parts[3].substring(1, parts[3].length() - 1), Double.parseDouble(parts[4]),
                     Double.parseDouble(parts[5]), Integer.parseInt(parts[6]));
+
+            codes.add(z);  // put z at the end of the array list
+        }  // while loop
+
+        // sort by the zipcode
+        Collections.sort(this.codes);
+
+    }  // load_sips
+
+
+    // write a function to search for zipcode data by a zipcode
+    // Return the reference to the object if found, null if not found
+    public Zipcode findByZip(String code) {
+        for (Zipcode zipcode : this.codes) {
+            if (code.equals(zipcode.getCode())) {
+                return zipcode;
+            }
+        }
+        return null;  // zipcode not found in the database
+    } // findByZip
+
+    public Zipcode findByZip1(String code) {
+        for (int i = 0; i < this.codes.size(); i++) {
+            if (code.equals(this.codes.get(i).getCode())) {
+                return this.codes.get(i);
+            }
+        }
+        return null;  // zipcode not found in the database
+    } // findByZip1
+
+    private Zipcode bsearch(String target, int low, int high) {
+        // check to see if word has been found
+        if (low > high) {
+            return null;
         }
 
-    }
+        int mid = (low + high) / 2;
 
-}
+        if (this.codes.get(mid).getCode().equals(target)) {
+            return this.codes.get(mid);
+        }
+        else if (this.codes.get(mid).getCode().compareTo(target) < 0) {
+            return bsearch(target, mid + 1, high);
+        }
+        else {
+            return bsearch(target, low, mid - 1);
+        }
+    }  // bsearch
+
+
+    // Provides a simpler interface to the bsearch function
+    public Zipcode search(String code) {
+        return bsearch(code, 0, codes.size() - 1);
+    } // search
+
+} // Database
