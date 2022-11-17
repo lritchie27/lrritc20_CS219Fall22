@@ -1,7 +1,7 @@
 /*
     Logan Ritchie
     HW9 Assignment
-    11/15/2022
+    11/17/2022
  */
 
 package HW9;
@@ -31,7 +31,6 @@ public class HW9 {
         built in pow function.
      */
     public static BigInteger fastbigpow(BigInteger x, int y) {
-        BigInteger prod = BigInteger.ONE;
         if (y == 0) {
             return BigInteger.ONE;
         }
