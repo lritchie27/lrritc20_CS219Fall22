@@ -24,7 +24,7 @@ public class Database {
 
     // fill the zipcode array list with real data
     private void load_zips() {
-        // connect to the web page of speeds
+        // connect to the web page of zipcodes
         URL url = null;    // null is the nothing value
         Scanner s = null;
 
@@ -96,7 +96,16 @@ public class Database {
 
     // Provides a simpler interface to the bsearch function
     public Zipcode search(String code) {
-        return bsearch(code, 0, codes.size() - 1);
+       // return bsearch(code, 0, codes.size() - 1);
+        int pos = Collections.binarySearch(this.codes, new Zipcode(code, "", "", 0, 0, 0));
+
+        if (pos != -1) {
+            return this.codes.get(pos);
+        }
+        else {
+            return null;
+        }
+
     } // search
 
 } // Database
