@@ -74,7 +74,24 @@ public class Zipcode implements Comparable<Zipcode>, Distance {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return null;  // just to get rid of error message
+
+        double humidity = 0, temp = 0, speed = 0;
+        String clouds = "";
+
+        while (s.hasNextLine()) {
+            String line = s.nextLine();
+            if (line.indexOf("humidity") >0 ) {
+                humidity = Double.parseDouble(
+                        line.substring(line.indexOf(':')+1,
+                                line.indexOf(',')));
+            }
+
+        }
+
+        WeatherObservation ob = new WeatherObservation(humidity, speed, temp, clouds);
+
+        return ob;
+
     }
 
 }
