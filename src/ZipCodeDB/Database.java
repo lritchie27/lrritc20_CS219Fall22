@@ -108,4 +108,11 @@ public class Database {
 
     } // search
 
+    /*
+        Return the zipcode info of the northern most latitude
+     */
+    public Zipcode max_latitude() {
+        return null;
+    }
+
 } // Database

@@ -80,11 +80,10 @@ public class Zipcode implements Comparable<Zipcode>, Distance {
 
         while (s.hasNextLine()) {
             String line = s.nextLine();
-            if (line.indexOf("humidity") >0 ) {
-                humidity = Double.parseDouble(
-                        line.substring(line.indexOf(':')+1,
-                                line.indexOf(',')));
+            if (line.indexOf("humidity") > 0) {
+                humidity = Double.parseDouble(line.substring(line.indexOf(':') + 1, line.indexOf(',')));
             }
+            // finish this for studying
 
         }
 
