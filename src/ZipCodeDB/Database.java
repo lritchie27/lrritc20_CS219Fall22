@@ -74,6 +74,19 @@ public class Database {
         return null;  // zipcode not found in the database
     } // findByZip1
 
+    /*
+        Return the zipcode info of the northern most latitude
+     */
+    public Zipcode max_latitude() {
+        Zipcode maxLat = new Zipcode("", "", "", 0.0, Double.MIN_VALUE, 0);
+        for(int i = 0; i < this.codes.size(); i++) {
+            if (this.codes.get(i).getLat() > maxLat.getLat()) {
+                maxLat = this.codes.get(i);
+            }
+        }
+        return maxLat;
+    }
+
     private Zipcode bsearch(String target, int low, int high) {
         // check to see if word has been found
         if (low > high) {
@@ -85,9 +98,11 @@ public class Database {
         if (this.codes.get(mid).getCode().equals(target)) {
             return this.codes.get(mid);
         }
+        // target is greater than mid
         else if (this.codes.get(mid).getCode().compareTo(target) < 0) {
             return bsearch(target, mid + 1, high);
         }
+        // target is less than mid
         else {
             return bsearch(target, low, mid - 1);
         }
@@ -107,12 +122,5 @@ public class Database {
         }
 
     } // search
-
-    /*
-        Return the zipcode info of the northern most latitude
-     */
-    public Zipcode max_latitude() {
-        return null;
-    }
 
 } // Database

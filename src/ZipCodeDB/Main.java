@@ -18,9 +18,9 @@ public class Main {
         System.out.println(db.search("13617"));
         System.out.println(db.search("63367"));
 
-        WeatherObservation wob = db.search("13617").getWeatherData();
+
+        WeatherObservation wob = db.search("63367").getWeatherData();
         System.out.println(wob);
-        return;
 
     }
 
