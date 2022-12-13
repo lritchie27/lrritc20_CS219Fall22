@@ -1,3 +1,9 @@
+/*
+    Logan Ritchie
+    Final Exam
+    12/13/2022
+ */
+
 package ZipCodeDB;
 
 import javax.swing.*;
@@ -11,7 +17,7 @@ public class GUIPanel extends JPanel{
     private JButton submit;
     private JTextArea output;
     private Database db;  // The zipcode database
-    private JButton maxLat;
+    private JButton northernmost;
 
     public GUIPanel() {
         this.zipcode = new JTextField("zipcode", 7);
@@ -26,9 +32,9 @@ public class GUIPanel extends JPanel{
 
         this.db = new Database();  // load the zipcodes
 
-        this.maxLat = new JButton("Max Latitude");
-        this.add(this.maxLat);
-        this.maxLat.addActionListener(new maxLatButtonListener());
+        this.northernmost = new JButton("Northernmost");
+        this.add(this.northernmost);
+        this.northernmost.addActionListener(new northernmostButtonListener());
     }
 
     class SubmitButtonListener implements ActionListener {
@@ -48,16 +54,23 @@ public class GUIPanel extends JPanel{
         }
     }
 
-    class maxLatButtonListener implements ActionListener {
+    class northernmostButtonListener implements ActionListener {
         // function will get called when the user presses maxLat
 
         public void actionPerformed(ActionEvent e) {
             // function will get called when the user presses maxLat
-            Zipcode zc = db.max_latitude();
-            output.setText(zc.toString());
-            System.out.println(zc);
+
+            // find zipcode of northernmost latitude
+            Zipcode zc = db.getNorthern();
+
+            // find weather data for that zipcode
             WeatherObservation wob = zc.getWeatherData();
+
+            // put info on the output box on JPanel
             output.setText(zc + "\n" + wob.toString());
+
+            // print to the console
+            System.out.println(zc);
             System.out.println(wob);
 
         }

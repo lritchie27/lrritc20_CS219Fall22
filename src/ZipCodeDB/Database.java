@@ -1,3 +1,9 @@
+/*
+    Logan Ritchie
+    Final Exam
+    12/13/2022
+ */
+
 package ZipCodeDB;
 
 import java.io.IOException;
@@ -9,10 +15,10 @@ import java.util.Collections;
 import java.util.Scanner;
 
 /*
- *  Store data about all of the zipcodes.
+ *  Store data about all the zipcodes.
  */
 
-public class Database {
+public class Database implements LatLngInterface {
 
     private ArrayList<Zipcode> codes;
 
@@ -75,9 +81,9 @@ public class Database {
     } // findByZip1
 
     /*
-        Return the zipcode info of the northern most latitude
+        Return the zipcode info of the northernmost latitude
      */
-    public Zipcode max_latitude() {
+    public Zipcode getNorthern() {
         Zipcode maxLat = new Zipcode("", "", "", 0.0, Double.MIN_VALUE, 0);
         for(int i = 0; i < this.codes.size(); i++) {
             if (this.codes.get(i).getLat() > maxLat.getLat()) {
